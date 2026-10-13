@@ -42,4 +42,9 @@ void main() {
             .sorted(Comparator.comparing(Producto::precio).reversed())
             .forEach(System.out::println);
 
+    System.out.println("5. ordenar los productos por stock descendente. Si dos productos tienen el mismo stock, colocar primero el de menor precio.");
+    listaDeProducto.stream()
+            .sorted(Comparator.comparingDouble(Producto::stock).reversed().thenComparing(Producto::precio))
+            .forEach(System.out::println);
+
 }
