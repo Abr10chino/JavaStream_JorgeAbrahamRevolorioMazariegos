@@ -47,4 +47,11 @@ void main() {
             .sorted(Comparator.comparingDouble(Producto::stock).reversed().thenComparing(Producto::precio))
             .forEach(System.out::println);
 
+    System.out.println("6. Calcular el valor total del inventario");
+    double totalInventario = listaDeProducto.stream()
+            .mapToDouble(p -> p.precio() * p.stock())
+            .sum();
+
+    System.out.println("El total del inventario es: " + totalInventario);
+
 }
