@@ -54,4 +54,16 @@ void main() {
 
     System.out.println("El total del inventario es: " + totalInventario);
 
+    System.out.println("7. Calcular el total de cada factura");
+
+    DatosPrueba.FACTURAS.stream()
+            .forEach(f ->
+            {
+                double totalFactura = f.detalles().stream()
+                        .mapToDouble(DetalleDeFactura::subtotal).sum();
+
+                System.out.println("El precio de la factura es: " + totalFactura);
+            });
+
+
 }
