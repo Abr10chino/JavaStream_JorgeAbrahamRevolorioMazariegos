@@ -32,5 +32,14 @@ void main() {
             .sorted()
             .forEach(System.out::println);
 
+    System.out.println("3. Ordenar los objectos de productos del precio más bajo al más alto.");
+    listaDeProducto.stream()
+            .sorted(Comparator.comparing(Producto::precio))
+            .forEach(System.out::println);
+
+    System.out.println("4. Ordenar los objectos de productos del precio más bajo al más alto. De Reversa");
+    listaDeProducto.stream()
+            .sorted(Comparator.comparing(Producto::precio).reversed())
+            .forEach(System.out::println);
 
 }
